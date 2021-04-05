@@ -5,8 +5,15 @@ ARG VARIANT="focal"
 FROM mcr.microsoft.com/vscode/devcontainers/base:0-${VARIANT}
 
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-     && apt-get -y install --no-install-recommends \
-        apt-transport-https \
-        bats \
-        curl \
-        shellcheck
+   && apt-get -y install --no-install-recommends \
+      apt-transport-https \
+      bats \
+      curl \
+      python3 \
+      python3-magic \
+      python3-pip \
+      python3-wheel \
+      python3-setuptools \
+      shellcheck &&\
+   pip3 install --upgrade pip && \
+   pip3 install pre-commit
