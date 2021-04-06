@@ -6,7 +6,7 @@ Many services (not all) can be configured with random TCP or UDP ports. But whic
 
 1. Port number 1024 or higher:  ports from 0 to 1023 are privileged ports and a service needs root permissions to bind to privileged ports. This is insecure, a bug in your service might expose the whole server.
 
-2. Not listed in the [IANA port and services list](): many vulnerability scanners such as [OpenVas](https://openvas.org/) can be configured to scan all ports listed in IANA. Hence we avoid those ports.
+2. Not listed in the [IANA port and services list](https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml): many vulnerability scanners such as [OpenVas](https://openvas.org/) can be configured to scan all ports listed in IANA. Hence we avoid those ports.
 
 3. Not part of the [Nmap](https://nmap.org/) top 1000 ports. Nmap is a powerfull port scanner. Without additional options, it will scan the top 1000 most common ports. We avoid those ports.
 
